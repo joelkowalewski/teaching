@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup VS Code for Jupyter Notebooks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Setup VS Code for Jupyter Notebooks Using Anaconda</h1>
+
+    <h2>Step 1: Install Visual Studio Code</h2>
+    <ol>
+        <li>Download and install Visual Studio Code from the official website: 
+            <a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a>.
+        </li>
+        <li>Follow the installation instructions for your operating system (Windows, macOS, or Linux).</li>
+    </ol>
+
+    <h2>Step 2: Install Anaconda</h2>
+    <ol>
+        <li>Download and install Anaconda from the official website: 
+            <a href="https://www.anaconda.com/products/distribution" target="_blank">https://www.anaconda.com/products/distribution</a>.
+        </li>
+        <li>Follow the installation instructions for your operating system.</li>
+        <li>During the installation process, make sure to check the box that says "Add Anaconda to my PATH environment variable" if available (or set it up manually later).</li>
+        <li>Verify the installation by opening a terminal (Command Prompt, PowerShell, or Terminal) and typing:
+            <pre><code>conda --version</code></pre>
+            You should see the version of Conda you installed.
+        </li>
+    </ol>
+
+    <h2>Step 3: Create a New Conda Environment (Optional but Recommended)</h2>
+    <ol>
+        <li>Open a terminal.</li>
+        <li>Create a new environment with a specific Python version (e.g., Python 3.8) by running:
+            <pre><code>conda create -n myenv python=3.8</code></pre>
+            Replace <code>myenv</code> with your preferred environment name.
+        </li>
+        <li>Activate the new environment by running:
+            <pre><code>conda activate myenv</code></pre>
+        </li>
+    </ol>
+
+    <h2>Step 4: Install Jupyter in the Conda Environment</h2>
+    <ol>
+        <li>With the Conda environment activated, install Jupyter by running:
+            <pre><code>conda install jupyter</code></pre>
+        </li>
+    </ol>
+
+    <h2>Step 5: Install the Python Extension in VS Code</h2>
+    <ol>
+        <li>Open Visual Studio Code.</li>
+        <li>Click on the Extensions icon in the Activity Bar on the side of the window (or press <code>Ctrl+Shift+X</code>).</li>
+        <li>In the Extensions view, search for "Python".</li>
+        <li>Click on the <strong>Python</strong> extension by Microsoft and install it.</li>
+    </ol>
+
+    <h2>Step 6: Install the Jupyter Extension in VS Code</h2>
+    <ol>
+        <li>In the Extensions view, search for "Jupyter".</li>
+        <li>Click on the <strong>Jupyter</strong> extension by Microsoft and install it.</li>
+    </ol>
+
+    <h2>Step 7: Configure Python Environment in VS Code</h2>
+    <ol>
+        <li>Open VS Code and go to the Command Palette by pressing <code>Ctrl+Shift+P</code> (Windows/Linux) or <code>Cmd+Shift+P</code> (macOS).</li>
+        <li>Type "Python: Select Interpreter" and select it.</li>
+        <li>Choose the Python interpreter from the Conda environment you created earlier. It will be listed as something like <code>Python 3.x (Conda)</code>.</li>
+    </ol>
+
+    <h2>Step 8: Create or Open a Jupyter Notebook</h2>
+    <ol>
+        <li>In VS Code, go to the Command Palette (<code>Ctrl+Shift+P</code> or <code>Cmd+Shift+P</code>).</li>
+        <li>Type "Jupyter: Create New Blank Notebook" and select it to create a new Jupyter notebook.
+            <ul>
+                <li>Alternatively, you can open an existing <code>.ipynb</code> file by navigating to the file and opening it in VS Code.</li>
+            </ul>
+        </li>
+        <li>A new Jupyter notebook should open in a new tab. You can now add and run cells in the notebook.</li>
+    </ol>
+
+    <h2>Step 9: Running Jupyter Notebook Cells</h2>
+    <ol>
+        <li>Add code or markdown to a cell.</li>
+        <li>Run the cell by clicking the play button to the left of the cell or by selecting the cell and pressing <code>Shift+Enter</code>.</li>
+    </ol>
+
+    <h2>Step 10: Managing Extensions and Updates</h2>
+    <ol>
+        <li>Keep your Jupyter and Python extensions up-to-date by periodically checking for updates in the Extensions view in VS Code.</li>
+        <li>Regularly update your Conda packages by running:
+            <pre><code>conda update conda
+conda update --all</code></pre>
+        </li>
+    </ol>
+</body>
+</html>

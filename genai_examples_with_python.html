@@ -1,0 +1,94 @@
+<html><head><style>pre {background: #f4f4f4; padding: 10px; border-radius: 5px;}</style></head><body><pre>
+# Example 1: Using a List to Store Prompts for GenAI API Calls
+prompts = [
+    "Generate an image of a futuristic city.",
+    "Generate an image of a serene landscape.",
+    "Generate an image of a bustling market."
+]
+
+for prompt in prompts:
+    print(f"Prompt: {prompt}")
+</pre><pre>
+# Example 2: Using a Tuple to Store Immutable API Configuration
+api_config = ("https://api.example.com/generate", "your_api_key_here")
+
+api_url, api_key = api_config
+print(f"API URL: {api_url}")
+print(f"API Key: {api_key}")
+</pre><pre>
+# Example 3: Using a Dictionary to Map Prompts to Generated Images
+generated_images = {
+    "futuristic city": "image_url_1",
+    "serene landscape": "image_url_2",
+    "bustling market": "image_url_3"
+}
+
+for prompt, image_url in generated_images.items():
+    print(f"Prompt: {prompt}, Image URL: {image_url}")
+</pre><pre>
+# Example 4: Using a Loop to Make API Calls for Each Prompt
+import requests
+
+prompts = [
+    "Generate an image of a futuristic city.",
+    "Generate an image of a serene landscape.",
+    "Generate an image of a bustling market."
+]
+
+api_url = "https://api.example.com/generate"
+api_key = "your_api_key_here"
+
+for prompt in prompts:
+    response = requests.post(api_url, headers={"Authorization": f"Bearer {api_key}"}, json={"prompt": prompt, "num_images": 1})
+    if response.status_code == 200:
+        print(f"Prompt: {prompt}, Generated Images: {response.json()}")
+    else:
+        print(f"Failed to generate images for prompt: {prompt}, Error: {response.text}")
+</pre><pre>
+# Example 5: Using a Function to Generate an Image
+import requests
+
+def generate_image(prompt, api_url, api_key):
+    response = requests.post(api_url, headers={"Authorization": f"Bearer {api_key}"}, json={"prompt": prompt, "num_images": 1})
+    if response.status_code == 200:
+        return response.json()
+    else:
+        return f"Error: {response.text}"
+
+api_url = "https://api.example.com/generate"
+api_key = "your_api_key_here"
+prompt = "Generate an image of a futuristic city."
+
+generated_image = generate_image(prompt, api_url, api_key)
+print(f"Generated Image: {generated_image}")
+</pre><pre>
+# Example 6: Using args in a Function for GenAI
+def generate_images(api_url, api_key, *prompts):
+    for prompt in prompts:
+        response = requests.post(api_url, headers={"Authorization": f"Bearer {api_key}"}, json={"prompt": prompt, "num_images": 1})
+        if response.status_code == 200:
+            print(f"Prompt: {prompt}, Generated Images: {response.json()}")
+        else:
+            print(f"Failed to generate images for prompt: {prompt}, Error: {response.text}")
+
+api_url = "https://api.example.com/generate"
+api_key = "your_api_key_here"
+
+generate_images(api_url, api_key, "Generate an image of a futuristic city.", "Generate an image of a serene landscape.", "Generate an image of a bustling market.")
+</pre><pre>
+# Example 7: Using kwargs in a Function for GenAI (Revised)
+def generate_images_with_kwargs(api_url, api_key, **kwargs):
+    valid_keys = {"prompt", "num_images", "style"}
+    options = {k: v for k, v in kwargs.items() if k in valid_keys}
+    
+    response = requests.post(api_url, headers={"Authorization": f"Bearer {api_key}"}, json=options)
+    if response.status_code == 200:
+        print(f"Options: {options}, Generated Images: {response.json()}")
+    else:
+        print(f"Failed to generate images with options: {options}, Error: {response.text}")
+
+api_url = "https://api.example.com/generate"
+api_key = "your_api_key_here"
+
+generate_images_with_kwargs(api_url, api_key, prompt="Generate an image of a futuristic city.", num_images=2, style="cyberpunk")
+</pre></body></html>
